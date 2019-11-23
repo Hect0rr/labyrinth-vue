@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
+import Lab from '../views/Lab.vue';
 import Lost from '../views/Lost.vue';
 import { hasToken } from '../authentication/authTokenTools';
 
@@ -16,11 +17,19 @@ const routes = [
     }
   },
   {
-    path: '/signin',
+    path: '/lab',
+    name: 'lab',
+    component: Lab,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/lab',
     name: 'signin',
     component: Home
     //component: () =>
-    //  import(/* webpackChunkName: "about" */ '../views/Home.vue')
+    //  import(/* webpackChunkName: "about" */ '../views/Signin.vue')
   },
   {
     path: '*',
